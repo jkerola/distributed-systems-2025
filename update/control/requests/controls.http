@@ -1,0 +1,24 @@
+@host=http://localhost:5000
+### Get GRPC
+
+GET /
+
+### GET Kafka
+GET /kafka
+
+### Post Message
+POST / 
+Content-Type: application/json
+
+{
+    "message": "{{$input message}}"
+}
+
+### Post invalid json
+
+POST / 
+Content-Type: application/json
+
+{
+    "message"
+}

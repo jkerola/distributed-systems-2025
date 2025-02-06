@@ -1,0 +1,9 @@
+from alpine:latest
+run apk upgrade
+run apk add python3 py3-pip
+run apk add gcc musl-dev linux-headers python3-dev
+workdir app
+copy . .
+run pip install -r requirements.txt --break-system-packages
+expose 8080
+entrypoint ["waitress-serve", "app:app"]
