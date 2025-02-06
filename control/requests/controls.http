@@ -22,3 +22,27 @@ Content-Type: application/json
 {
     "message"
 }
+
+### Create new topic
+POST /new_topic
+
+{
+  "topic": "topikki"
+}
+
+
+### Send to kafka grpc response
+POST /send_producer
+
+{
+  "topic": "topikki",
+  "number1": 1,
+  "number2": 2
+}
+
+### Start consumer with topic name
+POST /start_consumer
+
+{
+  "topic": "topikki"
+}
