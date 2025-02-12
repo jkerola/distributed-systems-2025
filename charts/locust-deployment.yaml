@@ -31,4 +31,11 @@ spec:
           ports:
             - containerPort: 8089
               protocol: TCP
+          volumeMounts:
+            - name: locust-scripts
+              mountPath: /mnt/locust
+      volumes:
+      - name: locust-scripts   # Volume name must match the one in volumeMounts
+        configMap:
+          name: locust-scripts-configmap
       restartPolicy: Always
