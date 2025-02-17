@@ -35,6 +35,13 @@ spec:
             - mountPath: /prometheus
               name: prometheus-data
       restartPolicy: Always
+      resources:  # This is where you add Resource Requests and Limits
+        requests:
+          memory: "1Gi"   # Adjust based on your requirements
+          cpu: "500m"     # Adjust based on your requirements
+        limits:
+          memory: "2Gi"   # Adjust based on your requirements
+          cpu: "1"        # Adjust based on your requirements
       volumes:
         - configMap:
             items:

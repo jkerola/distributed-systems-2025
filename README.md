@@ -40,3 +40,6 @@ sudo kubectl apply -f .
 # remove from cluster
 sudo kubectl delete -f  .
 ```
+for svc in $(kubectl get svc --no-headers -o custom-columns=":metadata.name"); do
+  minikube service "$svc" --url &
+done
